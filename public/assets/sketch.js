@@ -8,4 +8,14 @@ class Bubble {
     this.g = 0;
     this.b = 0;
   }
+  show() {
+    stroke(255);
+    strokeWeight(5);
+    if (this.r === 0 && this.g === 0 && this.b === 0) {
+      noFill();
+    } else {
+      fill(this.r, this.g, this.b);
+    }
+    ellipse(this.x, this.y, this.diameter);
+  }
 }
