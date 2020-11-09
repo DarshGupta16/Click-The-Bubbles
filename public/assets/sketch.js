@@ -1,9 +1,18 @@
+let bubblesToDisplay = document.getElementById("bubblesToDisplay").value;
+const triggerBtn = document.getElementById("triggerBtn");
+
+triggerBtn.onclick = () => {
+  bubblesToDisplay = document.getElementById("bubblesToDisplay").value;
+  bubbles = [];
+  setup();
+};
+
 let bubbles = [];
 let score = 0;
 let scoreDisplay = `Score: ${score}`;
 function setup() {
   createCanvas(600, 400);
-  for (let i = 0; i < 20; i++) {
+  for (let i = 0; i < bubblesToDisplay; i++) {
     let newBubble = new Bubble(random(600), random(400), random(20, 70));
     bubbles.push(newBubble);
   }
