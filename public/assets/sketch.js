@@ -1,3 +1,11 @@
+function setup() {
+  createCanvas(600, 400);
+}
+
+function draw() {
+  background(0);
+}
+
 class Bubble {
   constructor(x, y, diameter) {
     this.x = x;
