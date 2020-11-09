@@ -13,3 +13,18 @@ body {
 canvas {
   display: block;
 }
+
+.title {
+  font-family: sans-serif;
+}
+
+#bubblesToDisplay {
+  outline: none;
+  font-size: 30px;
+}
+
+#triggerBtn {
+  font-size: 30px;
+  outline: none;
+  cursor: pointer;
+}
