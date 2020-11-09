@@ -1,4 +1,6 @@
 let bubbles = [];
+let score = 0;
+let scoreDisplay = `Score: ${score}`;
 function setup() {
   createCanvas(600, 400);
   for (let i = 0; i < 20; i++) {
@@ -10,6 +12,11 @@ function setup() {
 function mousePressed() {
   for (let i = 0; i < bubbles.length; i++) {
     if (bubbles[i].contains(mouseX, mouseY)) {
+      let newBubble = new Bubble(random(600), random(400), random(20, 70));
+      bubbles.push(newBubble);
+      score += 1;
+      scoreDisplay = `Score: ${score}`;
+      text(scoreDisplay, 10, 10);
       bubbles.splice(i, 1);
     }
   }
@@ -26,6 +33,8 @@ function draw() {
     }
     bubbles[i].show();
   }
+  fill(255, 0, 0);
+  text(scoreDisplay, 10, 10);
 }
 
 class Bubble {
