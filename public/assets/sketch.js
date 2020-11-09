@@ -11,6 +11,11 @@ function draw() {
   background(0);
   for (let i = 0; i < bubbles.length; i++) {
     bubbles[i].move();
+    if (bubbles[i].contains(mouseX, mouseY)) {
+      bubbles[i].hoverEffect();
+    } else {
+      bubbles[i].g = 0;
+    }
     bubbles[i].show();
   }
 }
@@ -38,5 +43,12 @@ class Bubble {
   move() {
     this.x = this.x + random(-5, 5);
     this.y = this.y + random(-5, 5);
+  }
+  contains(x, y) {
+    let tempDist = dist(this.x, this.y, x, y);
+    return tempDist <= this.radius;
+  }
+  hoverEffect() {
+    this.g = 255;
   }
 }
