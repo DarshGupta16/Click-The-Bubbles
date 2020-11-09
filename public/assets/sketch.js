@@ -7,6 +7,14 @@ function setup() {
   }
 }
 
+function mousePressed() {
+  for (let i = 0; i < bubbles.length; i++) {
+    if (bubbles[i].contains(mouseX, mouseY)) {
+      bubbles.splice(i, 1);
+    }
+  }
+}
+
 function draw() {
   background(0);
   for (let i = 0; i < bubbles.length; i++) {
