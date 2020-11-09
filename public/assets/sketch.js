@@ -18,4 +18,8 @@ class Bubble {
     }
     ellipse(this.x, this.y, this.diameter);
   }
+  move() {
+    this.x = this.x + random(-5, 5);
+    this.y = this.y + random(-5, 5);
+  }
 }
